@@ -1,6 +1,9 @@
 import { useCallback } from 'react'
+import { useLenis } from '@/components/layout/LenisProvider'
 
 export const useSmoothScroll = () => {
+  const lenis = useLenis()
+
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -8,13 +11,20 @@ export const useSmoothScroll = () => {
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
+      if (lenis) {
+        lenis.scrollTo(element, {
+          offset: -headerOffset,
+          duration: 1.1,
+          easing: (t) => 1 - (1 - t) * (1 - t),
+        })
+      } else {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
+      }
     }
-  }, [])
+  }, [lenis])
 
   return { scrollToSection }
 }
-

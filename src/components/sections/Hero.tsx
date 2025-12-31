@@ -25,7 +25,7 @@ export default function Hero() {
       >
         <motion.h1
           variants={fadeInUp}
-          className="text-4xl md:text-display-lg font-semibold text-white mb-6 font-display"
+          className="text-4xl md:text-6xl font-semibold text-white mb-6 font-display"
         >
           <span className="block">O Futuro da Tecnologia em</span>
           <span className="block text-[#C471B6]">

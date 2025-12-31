@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { id: 'sobre-nos', label: 'Sobre Nós' },
   { id: 'programas', label: 'Programas' },
+  { id: 'parceiros', label: 'Parceiros' },
   { id: 'comunidade', label: 'Comunidade' },
 ]
 

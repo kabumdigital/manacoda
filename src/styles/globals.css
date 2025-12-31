@@ -2,9 +2,9 @@
 
 /* Additional global styles for MANA CODA */
 
-/* Smooth scrolling */
+/* Smooth scrolling handled by Lenis */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Focus styles for accessibility */
@@ -28,4 +28,3 @@ html {
 .skip-to-main:focus {
   top: 0;
 }
-

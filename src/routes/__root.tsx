@@ -14,6 +14,7 @@ import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 import appCss from '../styles.css?url'
 import globalsCss from '../styles/globals.css?url'
 import { structuredData } from '../lib/seo'
+import { LenisProvider } from '@/components/layout/LenisProvider'
 
 import type { QueryClient } from '@tanstack/react-query'
 
@@ -68,26 +69,28 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="bg-brand-navy text-white">
-        <a href="#main-content" className="skip-to-main">
-          Saltar para o conteúdo principal
-        </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        {import.meta.env.DEV && (
-          <TanStackDevtools
-            config={{
-              position: 'bottom-right',
-            }}
-            plugins={[
-              {
-                name: 'Tanstack Router',
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-              TanStackQueryDevtools,
-            ]}
-          />
-        )}
+        <LenisProvider>
+          <a href="#main-content" className="skip-to-main">
+            Saltar para o conteúdo principal
+          </a>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+          {import.meta.env.DEV && (
+            <TanStackDevtools
+              config={{
+                position: 'bottom-right',
+              }}
+              plugins={[
+                {
+                  name: 'Tanstack Router',
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+                TanStackQueryDevtools,
+              ]}
+            />
+          )}
+        </LenisProvider>
         <Scripts />
       </body>
     </html>

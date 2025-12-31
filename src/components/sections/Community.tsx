@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { Button } from '@/components/ui/Button'
+import { GridPattern } from '@/components/ui/grid-pattern'
 import { ShineBorder } from '@/components/ui/shine-border'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
@@ -38,7 +39,12 @@ export default function Community() {
       className="relative overflow-visible py-56 bg-[#272356]"
     >
       <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_top_left,#ffffff10_0,transparent_30%),radial-gradient(circle_at_bottom_right,#ffffff08_0,transparent_28%)]" />
-      <div className="absolute inset-0 pointer-events-none opacity-15" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px))', backgroundSize: '80px 80px' }} />
+      <GridPattern
+        width={90}
+        height={90}
+        strokeDasharray="2 4"
+        className="absolute inset-0 fill-transparent stroke-white/15 opacity-60"
+      />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 mb-32">

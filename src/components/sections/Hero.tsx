@@ -10,10 +10,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center bg-brand-navy relative overflow-hidden bg-[url(/hero.png)]"
+      className="min-h-screen flex items-center justify-center bg-brand-navy relative overflow-hidden bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.35)_40%,rgba(0,0,0,0.65)_100%),url(/hero.png)] bg-cover bg-center"
     >
       {/* Background Pattern (optional) */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
 
@@ -70,4 +70,3 @@ export default function Hero() {
     </section>
   )
 }
-

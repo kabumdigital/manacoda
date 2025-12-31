@@ -13,7 +13,7 @@ import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import appCss from '../styles.css?url'
 import globalsCss from '../styles/globals.css?url'
-import { structuredData } from '../lib/seo'
+import { structuredData, siteMetadata } from '../lib/seo'
 import { LenisProvider } from '@/components/layout/LenisProvider'
 
 import type { QueryClient } from '@tanstack/react-query'
@@ -49,6 +49,20 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       {
         rel: 'stylesheet',
         href: globalsCss,
+      },
+      {
+        rel: 'canonical',
+        href: siteMetadata.url,
+      },
+      {
+        rel: 'icon',
+        href: '/vertical_logo.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+        type: 'image/x-icon',
       },
     ],
     scripts: [

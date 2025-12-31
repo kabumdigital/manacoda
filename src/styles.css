@@ -97,14 +97,14 @@ code {
   --color-brand-pink-light: #C471B6;
   --color-brand-gold: #BCA075;
   --color-brand-gold-light: #BCA075;
-  
+
   /* Neutral Colors */
   --color-neutral-white: #FFFFFF;
   --color-neutral-gray-100: #F3F4F6;
   --color-neutral-gray-300: #D1D5DB;
   --color-neutral-gray-500: #9CA3AF;
   --color-neutral-gray-700: #374151;
-  
+
   /* Legacy theme colors (keeping for compatibility) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -142,12 +142,12 @@ code {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
+
   /* Typography */
   --font-family-sans: 'Inter', system-ui, sans-serif;
   --font-family-display: 'Montserrat', 'Inter', sans-serif;
   --font-family-mono: 'JetBrains Mono', monospace;
-  
+
   /* Font Sizes */
   --font-size-display-lg: 4.5rem;
   --font-size-display-md: 3.5rem;
@@ -156,6 +156,22 @@ code {
   --font-size-heading-md: 1.875rem;
   --font-size-body-lg: 1.25rem;
   --font-size-body: 1rem;
+  --animate-shine:
+    shine var(--duration) infinite linear;
+  @keyframes shine {
+  0% {
+    background-position:
+    0% 0%;
+    }
+  50% {
+    background-position:
+    100% 100%;
+    }
+  to {
+    background-position:
+    0% 0%;
+    }
+  }
 }
 
 @layer base {

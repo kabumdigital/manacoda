@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { Button } from '@/components/ui/Button'
+import { ShineBorder } from '@/components/ui/shine-border'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 
@@ -10,18 +11,21 @@ const ecosystemItems = [
     description: 'Histórias sem filtros, conversas inspiradoras e dicas de carreira.',
     accentColor: '#BCA075',
     borderGradient: 'linear-gradient(90deg, #508677 0%, #4498D6 100%)',
+    shineColors: ['#508677', '#4498D6'],
   },
   {
     title: 'Magazine "ELA CODA" 📖',
     description: 'A nossa revista trimestral com pesquisas, entrevistas e tendências.',
     accentColor: '#C471B6',
     borderGradient: 'linear-gradient(120deg, #C471B6 0%, #BCA075 100%)',
+    shineColors: ['#C471B6', '#BCA075'],
   },
   {
     title: 'Newsletter 💌',
     description: 'Bolsas de estudo, vagas de emprego e novidades direto no teu email.',
     accentColor: '#BCA075',
     borderGradient: 'linear-gradient(120deg, #BCA075 0%, #C471B6 100%)',
+    shineColors: ['#BCA075', '#C471B6'],
   },
 ]
 
@@ -67,9 +71,14 @@ export default function Community() {
                       item.borderGradient ||
                       'linear-gradient(120deg, var(--accent-color), rgba(255,255,255,0.18))',
                   }}
-                  className="relative p-[1px] h-full"
+                  className="relative h-full overflow-hidden p-[1px]"
                 >
-                  <div className="relative bg-brand-navy h-full">
+                  <ShineBorder
+                    borderWidth={2}
+                    shineColor={item.shineColors ?? item.accentColor}
+                    className="rounded-none z-10"
+                  />
+                  <div className="relative bg-brand-navy h-full z-10">
                     <div className="px-7 py-7 md:px-8 md:py-8 text-white min-h-[220px] flex flex-col gap-5 justify-between">
                       <div className="flex flex-col gap-5">
                         <div className="flex items-start gap-4">
@@ -91,9 +100,17 @@ export default function Community() {
         </div>
 
         <div className="relative flex justify-center">
-          <div className="relative bg-[linear-gradient(90deg,#508677_0%,#4498D6_100%)] p-px w-full lg:w-[60%]">
+          <div
+            className="relative w-full lg:w-[60%] overflow-hidden p-px"
+            style={{ backgroundImage: 'linear-gradient(90deg,#508677_0%,#4498D6_100%)' }}
+          >
+            <ShineBorder
+              borderWidth={2}
+              shineColor={['#508677', '#4498D6']}
+              className="rounded-none z-10"
+            />
             <div
-              className="relative overflow-hidden px-6 sm:px-20 py-10 lg:py-12"
+              className="relative overflow-hidden px-6 sm:px-20 py-10 lg:py-12 z-10"
               style={{ backgroundColor: '#081F35' }}
             >
               <div className="absolute inset-0 pointer-events-none">
